@@ -1,2 +1,2 @@
-# Arduino---C-
+# Arduino C++
 For Arduino C++ code
