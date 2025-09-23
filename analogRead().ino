@@ -21,27 +21,27 @@ void loop()
 
   //if statements below
   if(ADC_val<=255){
-    analogWrite(LED, ADC_val);
-    delay(200);
+    analogWrite(LED, 1023);
+    delay(100);
     analogWrite(LED, 0);
     delay(200);
   }
   else if(ADC_val<=520){
-    analogWrite(LED, ADC_val);
-    delay(500);
+    analogWrite(LED, 1023);
+    delay(250);
     analogWrite(LED, 0);
-    delay(500);
+    delay(250);
   }
   else if(ADC_val<=755){
-    analogWrite(LED, ADC_val);
-    delay(700);
+    analogWrite(LED, 1023);
+    delay(500);
     analogWrite(LED, 0);
-    delay(700);
+    delay(500);
   }
   else {
-    analogWrite(LED, ADC_val);
-    delay(1000);
+    analogWrite(LED, 1023);
+    delay(750);
     analogWrite(LED,0);
-    delay(1000);
+    delay(750);
   }
 }
