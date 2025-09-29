@@ -7,6 +7,7 @@
 // defines pins numbers
 const int trigPin = 11;
 const int echoPin = 12;
+int LED = 13;
 
 // defines variables
 long duration;
@@ -42,4 +43,12 @@ void loop() {
   // Prints the distance on the Serial Monitor
   Serial.print("Distance: ");
   Serial.println(distance);
+
+  //LED IF Statement Code Below
+  if (distance>5) {
+    digitalWrite(LED, HIGH);
+  }
+  else {
+    digitalWrite(LED, LOW);
+  }
 }
