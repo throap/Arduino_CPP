@@ -1,38 +1,35 @@
-# Fun "Pythonista Party" demo using the same ideas: list, indexing/slicing, list comprehension,
-# a generator (yield), and a function that adds ages.
+import random
 
-crew = ["Ethan", "Andy", "Dang"]          # list of names
-secret = "abcdxyz"                        # string to slice/index
+crew = ["Ethan", "Andy", "Dang"] #declare variables
+letters = "abcdxyz"  # indexes 0-6
 
-# Make all ordered pairs of different player indexes (like a mini round-robin)
+# all matchups (ordered pairs) where i != j
 matchups = [(i, j) for i in range(len(crew))
                   for j in range(len(crew)) if i != j]
 
-# Generator for rounds
+# generator for rounds
 def rounds(n):
     for r in range(n):
         yield r + 1
 
-# Function to add ages
+# function to add ages
 def total_age(e, a, d):
     return e + a + d
 
 ages_sum = total_age(16, 17, 17)
 
-# Use generator
 for r in rounds(3):
-    print("\n" + ("=" * 12) + f" ROUND {r} " + ("=" * 12))
+    print(f"\n=== ROUND {r} ===")
 
-    # each person gets a fun message
     for name in crew:
-        # slicing + negative indexing + upper for style
-        code_piece = secret[1:3]          # slice
-        last_char = secret[-1]            # negative index from end
-        print("Hey " + name + "! Your mini-code is:", (code_piece + last_char).upper())
+        # pick 3 different random indexes from 0..6
+        index1, index2, index3 = random.sample(range(len(letters)), 3)
 
-    # show the matchups each round
-    print("Matchups this round:")
-    for i, j in matchups:
-        print(f"  {crew[i]} vs {crew[j]}")
+        # build the secret code using those indexes
+        code = letters[index1] + letters[index2] + letters[index3]
 
-print("\nTheir total age is", ages_sum)
+        print(f"Hey {name}! Your secret code is: {code}")
+
+    print("Matchups:", matchups)
+
+print("Their total age is", ages_sum)
