@@ -1,7 +1,7 @@
 # Fun "Pythonista Party" demo using the same ideas: list, indexing/slicing, list comprehension,
 # a generator (yield), and a function that adds ages.
 
-crew = ["Ethan", "Minh", "Dang"]          # list of names
+crew = ["Ethan", "Andy", "Dang"]          # list of names
 secret = "abcdxyz"                        # string to slice/index
 
 # Make all ordered pairs of different player indexes (like a mini round-robin)
@@ -14,10 +14,10 @@ def rounds(n):
         yield r + 1
 
 # Function to add ages
-def total_age(e, m, d):
-    return e + m + d
+def total_age(e, a, d):
+    return e + a + d
 
-ages_sum = total_age(16, 16, 17)
+ages_sum = total_age(16, 17, 17)
 
 # Use generator
 for r in rounds(3):
@@ -26,7 +26,7 @@ for r in rounds(3):
     # each person gets a fun message
     for name in crew:
         # slicing + negative indexing + upper for style
-        code_piece = secret[1:3]          # slice (like your example)
+        code_piece = secret[1:3]          # slice
         last_char = secret[-1]            # negative index from end
         print("Hey " + name + "! Your mini-code is:", (code_piece + last_char).upper())
 
