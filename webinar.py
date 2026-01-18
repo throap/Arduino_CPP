@@ -1,6 +1,6 @@
 import random
 
-crew = ["Ethan", "Andy", "Dang"] #declare variables
+crew = ["Ethan", "Andy", "Dang"] # declare variables
 letters = "abcdxyz"  # indexes 0-6
 
 # all matchups (ordered pairs) where i != j
